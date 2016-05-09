@@ -17,9 +17,15 @@ void draw() {
 }
 
 void keyPressed() {
-	grid1.createGrid();
 
-	endRecord();
+	if (key == 'c') {
+		grid1.createGrid();
+	}
+
+	if (key == 's') {
+		endRecord();
+	}
+
 }
 
 class Grid {
