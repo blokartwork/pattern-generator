@@ -3,6 +3,8 @@ import processing.data.*;
 import processing.event.*; 
 import processing.opengl.*; 
 
+import processing.pdf.*; 
+
 import java.util.HashMap; 
 import java.util.ArrayList; 
 import java.io.File; 
@@ -14,11 +16,15 @@ import java.io.IOException;
 
 public class build extends PApplet {
 
+
+
 Grid grid1;
 
 public void setup() {
 	
-
+	
+	beginRecord(PDF, "../output/pattern.pdf"); 
+	
 	colorMode(HSB, 360, 100, 100);
 
 	grid1 = new Grid();
@@ -30,6 +36,8 @@ public void draw() {
 
 public void keyPressed() {
 	grid1.createGrid();
+
+	endRecord();
 }
 
 class Grid {

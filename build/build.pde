@@ -1,8 +1,12 @@
+import processing.pdf.*;
+
 Grid grid1;
 
 void setup() {
 	size(1920, 1080);
-
+	
+	beginRecord(PDF, "../output/pattern.pdf"); 
+	
 	colorMode(HSB, 360, 100, 100);
 
 	grid1 = new Grid();
@@ -14,6 +18,8 @@ void draw() {
 
 void keyPressed() {
 	grid1.createGrid();
+
+	endRecord();
 }
 
 class Grid {
