@@ -6,12 +6,14 @@ void setup() {
 	colorMode(HSB, 360, 100, 100);
 
 	grid1 = new Grid();
-
-	grid1.createGrid();
 }
 
 void draw() {
 
+}
+
+void keyPressed() {
+	grid1.createGrid();
 }
 
 class Grid {

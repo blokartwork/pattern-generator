@@ -22,12 +22,14 @@ public void setup() {
 	colorMode(HSB, 360, 100, 100);
 
 	grid1 = new Grid();
-
-	grid1.createGrid();
 }
 
 public void draw() {
 
+}
+
+public void keyPressed() {
+	grid1.createGrid();
 }
 
 class Grid {
@@ -44,13 +46,9 @@ class Grid {
 		}
 	}
 
-	// That defines what kind of shape you want to draw
-
 	public void drawShape(int posX, int posY, int shapeWidth, int shapeHeight) {
 		rect(posX, posY, shapeWidth, shapeHeight);
 	}
-
-	// That takes all information about the shape
 
 	public void setShape() {
 		fill(random(360), 100, 80);
