@@ -22,10 +22,6 @@ Grid grid1;
 
 public void setup() {
 	
-	
-	beginRecord(PDF, "../output/pattern.pdf"); 
-	
-	colorMode(HSB, 360, 100, 100);
 
 	grid1 = new Grid();
 }
@@ -37,11 +33,11 @@ public void draw() {
 public void keyPressed() {
 
 	if (key == 'c') {
-		grid1.createGrid();
-	}
+		beginRecord(PDF, "../output/pattern.pdf"); 
 
-	if (key == 'r') {
-		grid1.resetGrid();
+		colorMode(HSB, 360, 100, 100);
+
+		grid1.createGrid();
 	}
 
 	if (key == 's') {
@@ -56,15 +52,13 @@ class Grid {
 	int shapeSize = 10;
 
 	public void createGrid() {
+		background(100, 0, 80);
+
 		for (int i = 0; i < width; i += gridSize) {
 			for (int j = 0; j < height; j += gridSize) {
 				drawShape(i, j, shapeSize, shapeSize, "random");
 			}
 		}
-	}
-
-	public void resetGrid() {
-		background(100, 0, 80);
 	}
 
 	public void drawShape(int posX, int posY, int shapeWidth, int shapeHeight, String rotation) {
