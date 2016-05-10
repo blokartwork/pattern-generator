@@ -40,6 +40,10 @@ public void keyPressed() {
 		grid1.createGrid();
 	}
 
+	if (key == 'r') {
+		grid1.resetGrid();
+	}
+
 	if (key == 's') {
 		endRecord();
 	}
@@ -57,6 +61,10 @@ class Grid {
 				drawShape(i, j, shapeSize, shapeSize, "random");
 			}
 		}
+	}
+
+	public void resetGrid() {
+		background(100, 0, 80);
 	}
 
 	public void drawShape(int posX, int posY, int shapeWidth, int shapeHeight, String rotation) {
