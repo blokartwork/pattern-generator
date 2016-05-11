@@ -38,19 +38,18 @@ class Grid {
 
 		for (int i = 0; i < width; i += gridSize) {
 			for (int j = 0; j < height; j += gridSize) {
-				drawShape(i, j, shapeSize, shapeSize, "random");
+				drawShape(i, j, shapeSize, shapeSize);
 			}
 		}
 	}
 
-	void drawShape(int posX, int posY, int shapeWidth, int shapeHeight, String rotation) {
+	void drawShape(int posX, int posY, int shapeWidth, int shapeHeight) {
 		pushMatrix();
 		translate(posX, posY);
-		rotateShape(rotation);
-		setShape();
+		rotateShape("random");
+		setColor("random");
 		createShape(0, 0, shapeWidth, shapeHeight);
 		popMatrix();
-
 	}
 
 	void createShape(int posX, int posY, int shapeWidth, int shapeHeight) {
@@ -68,8 +67,11 @@ class Grid {
 		}
 	}
 
-	void setShape() {
-		fill(random(360), 100, 80);
+	void setColor(String colors) {
+		if (colors == "random") {
+			fill(random(360), 100, 80);
+		}
+		
 		noStroke();
 	}
 }
